@@ -1,0 +1,711 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "adojzurrqlts0a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 0,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-postgresql-datasource",
+              "uid": "adojzurrqlts0a"
+            },
+            "editorMode": "code",
+            "format": "table",
+            "rawQuery": true,
+            "rawSql": "SELECT AVG(share_missing_values)*100 FROM metrics",
+            "refId": "A",
+            "sql": {
+              "columns": [
+                {
+                  "name": "AVG",
+                  "parameters": [
+                    {
+                      "name": "share_missing_values",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              ],
+              "groupBy": [
+                {
+                  "property": {
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "limit": 50
+            },
+            "table": "metrics"
+          }
+        ],
+        "title": "Average NAN value share",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "adojzurrqlts0a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 4,
+          "y": 0
+        },
+        "id": 5,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-postgresql-datasource",
+              "uid": "adojzurrqlts0a"
+            },
+            "editorMode": "code",
+            "format": "table",
+            "rawQuery": true,
+            "rawSql": "SELECT AVG(prediction_drift) FROM metrics",
+            "refId": "A",
+            "sql": {
+              "columns": [
+                {
+                  "name": "AVG",
+                  "parameters": [
+                    {
+                      "name": "prediction_drift",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              ],
+              "groupBy": [
+                {
+                  "property": {
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "limit": 50
+            },
+            "table": "metrics"
+          }
+        ],
+        "title": "Average Prediction Drift",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "adojzurrqlts0a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 8,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-postgresql-datasource",
+              "uid": "adojzurrqlts0a"
+            },
+            "editorMode": "code",
+            "format": "table",
+            "rawQuery": true,
+            "rawSql": "SELECT AVG(num_drifted_columns) FROM metrics ",
+            "refId": "A",
+            "sql": {
+              "columns": [
+                {
+                  "parameters": [],
+                  "type": "function"
+                }
+              ],
+              "groupBy": [
+                {
+                  "property": {
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "limit": 50
+            }
+          }
+        ],
+        "title": "Average Column Drift",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "adojzurrqlts0a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-purples"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 37,
+              "gradientMode": "opacity",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 3,
+              "pointSize": 8,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 3
+        },
+        "id": 3,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-postgresql-datasource",
+              "uid": "adojzurrqlts0a"
+            },
+            "editorMode": "code",
+            "format": "table",
+            "rawQuery": true,
+            "rawSql": "SELECT \"timestamp\", share_missing_values FROM metrics",
+            "refId": "A",
+            "sql": {
+              "columns": [
+                {
+                  "parameters": [
+                    {
+                      "name": "\"timestamp\"",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                },
+                {
+                  "parameters": [
+                    {
+                      "name": "share_missing_values",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              ],
+              "groupBy": [
+                {
+                  "property": {
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "limit": 50
+            },
+            "table": "metrics"
+          }
+        ],
+        "title": "Missing values",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "adojzurrqlts0a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-blues"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "opacity",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineStyle": {
+                "fill": "solid"
+              },
+              "lineWidth": 2,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 11
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-postgresql-datasource",
+              "uid": "adojzurrqlts0a"
+            },
+            "editorMode": "code",
+            "format": "table",
+            "rawQuery": true,
+            "rawSql": "SELECT prediction_drift, \"timestamp\" FROM metrics ",
+            "refId": "A",
+            "sql": {
+              "columns": [
+                {
+                  "parameters": [
+                    {
+                      "name": "prediction_drift",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                },
+                {
+                  "parameters": [
+                    {
+                      "name": "num_drifted_columns",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                },
+                {
+                  "parameters": [
+                    {
+                      "name": "share_missing_values",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                },
+                {
+                  "parameters": [
+                    {
+                      "name": "\"timestamp\"",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              ],
+              "groupBy": [
+                {
+                  "property": {
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "limit": 50
+            },
+            "table": "metrics"
+          }
+        ],
+        "title": "prediction drift",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "adojzurrqlts0a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 24,
+              "gradientMode": "opacity",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 3,
+              "pointSize": 7,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 19
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-postgresql-datasource",
+              "uid": "adojzurrqlts0a"
+            },
+            "editorMode": "code",
+            "format": "table",
+            "rawQuery": true,
+            "rawSql": "SELECT \"timestamp\", num_drifted_columns FROM metrics",
+            "refId": "A",
+            "sql": {
+              "columns": [
+                {
+                  "parameters": [
+                    {
+                      "name": "\"timestamp\"",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                },
+                {
+                  "parameters": [
+                    {
+                      "name": "num_drifted_columns",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              ],
+              "groupBy": [
+                {
+                  "property": {
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "limit": 50
+            },
+            "table": "metrics"
+          }
+        ],
+        "title": "column drift",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "2022-02-01T00:00:00.000Z",
+      "to": "2022-02-27T00:00:00.000Z"
+    },
+    "timeRangeUpdatedDuringEditOrView": false,
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "Test Dashboard",
+    "uid": "cdok42lsuqcjkd",
+    "version": 1,
+    "weekStart": ""
+  }
